@@ -34,6 +34,24 @@ const styles = StyleSheet.create({
 export default DummyComponent;
 
 
+// Dummy service file for commit testing.
+// No functions are connected to the app.
+
+export const testApiCall = async () => {
+  return {
+    status: "success",
+    message: "Dummy API call for testing purposes",
+  };
+};
+
+export function calculateDummyValue(a, b) {
+  return a + b + 999; // meaningless logic
+}
+
+console.log("dummyService.js is here only for GitHub commit testing.");
+
+
+
 
 // Dummy utility file for GitHub commit testing.
 // This file is not imported anywhere in the app.

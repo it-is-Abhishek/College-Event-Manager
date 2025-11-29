@@ -33,6 +33,23 @@ const styles = StyleSheet.create({
 
 export default DummyComponent;
 
+
+
+// Dummy utility file for GitHub commit testing.
+// This file is not imported anywhere in the app.
+
+export function dummyFunction() {
+  return "This is a dummy function with no real purpose.";
+}
+
+export const dummyData = {
+  message: "Commit test",
+  value: 12345,
+};
+
+console.log("dummyUtils.js loaded for testing commits only.");
+
+
 // This file is only for GitHub commit testing.
 // It does not impact the app because it exports nothing
 // and is not imported anywhere.

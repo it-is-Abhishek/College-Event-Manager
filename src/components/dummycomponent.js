@@ -62,3 +62,25 @@ const placeholderNote = `
 console.log("DummyPlaceholder loaded for GitHub commit test.");
 
 export default placeholderNote;
+
+
+
+import React from "react";
+import { View, Text } from "react-native";
+
+// This component is only for commit testing.
+// It is not connected to your main app.
+
+const DummyBox = () => {
+  return (
+    <View style={{ padding: 20, backgroundColor: "#eee", borderRadius: 10 }}>
+      <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+        Dummy Box Component
+      </Text>
+      <Text>This component is only here for GitHub testing.</Text>
+    </View>
+  );
+};
+
+export default DummyBox;
+

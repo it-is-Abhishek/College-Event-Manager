@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { View, Text, TextInput, ScrollView, StyleSheet, TouchableOpacity, Alert, KeyboardAvoidingView, Platform } from 'react-native';
 import { useEvents } from '../context/EventsContext';
+import { useTheme } from '../context/ThemeContext';
 
 const AdminEventFormScreen = ({ navigation, route }) => {
     const { eventId } = route.params || {};

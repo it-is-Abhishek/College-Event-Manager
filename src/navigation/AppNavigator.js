@@ -40,6 +40,7 @@ const EventsStack = () => {
                 component={EventDetailsScreen}
                 options={{ title: 'Event Details' }}
             />
+            
         </Stack.Navigator>
     );
 };

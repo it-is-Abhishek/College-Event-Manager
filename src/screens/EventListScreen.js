@@ -2,6 +2,8 @@ import React, { useLayoutEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image, ActivityIndicator } from 'react-native';
 import { Calendar, MapPin, Clock } from 'lucide-react-native';
 import { useEvents } from '../context/EventsContext';
+import { useTheme } from '../context/ThemeContext';
+
 
 const EventListScreen = ({ navigation }) => {
     const { events, loading } = useEvents();

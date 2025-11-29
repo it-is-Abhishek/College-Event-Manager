@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { User, Lock, Mail, BookOpen } from 'lucide-react-native';
 import { useUser } from '../context/UserContext';
+import { useTheme } from '../context/ThemeContext';
+
 
 const AuthScreen = () => {
     const { signIn } = useUser();

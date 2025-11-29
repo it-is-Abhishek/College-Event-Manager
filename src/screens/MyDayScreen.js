@@ -4,6 +4,8 @@ import { Clock, MapPin } from 'lucide-react-native';
 import { useEvents } from '../context/EventsContext';
 import { useUser } from '../context/UserContext';
 import { isToday, formatDate } from '../utils/dateUtils';
+import { useTheme } from '../context/ThemeContext';
+
 
 const MyDayScreen = () => {
     const { events, getMyRegisteredEvents, getMyInterestedEvents, loading } = useEvents();

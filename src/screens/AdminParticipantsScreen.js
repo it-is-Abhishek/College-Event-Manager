@@ -2,6 +2,8 @@ import React, { useLayoutEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
 import { User, Hash, BookOpen } from 'lucide-react-native';
 import { useEvents } from '../context/EventsContext';
+import { useTheme } from '../context/ThemeContext';
+
 
 const AdminParticipantsScreen = ({ route, navigation }) => {
     const { eventId } = route.params;

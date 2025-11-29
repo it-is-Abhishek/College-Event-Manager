@@ -3,6 +3,8 @@ import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity, Alert, Act
 import { Calendar, MapPin, Clock, User, Phone } from 'lucide-react-native';
 import { useEvents } from '../context/EventsContext';
 import { useUser } from '../context/UserContext';
+import { useTheme } from '../context/ThemeContext';
+
 
 const EventDetailsScreen = ({ route, navigation }) => {
     const { eventId } = route.params;

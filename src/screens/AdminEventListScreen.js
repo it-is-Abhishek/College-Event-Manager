@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image, Alert, ActivityIndicator } from 'react-native';
 import { Calendar, MapPin, Clock, Plus, Edit, Trash2, Users } from 'lucide-react-native';
 import { useEvents } from '../context/EventsContext';
+import { useTheme } from '../context/ThemeContext';
+
 
 const AdminEventListScreen = ({ navigation }) => {
     const { events, cancelEvent, loading } = useEvents();

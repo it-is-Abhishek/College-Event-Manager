@@ -3,6 +3,8 @@ import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image, ActivityIndi
 import { Calendar, MapPin, Clock } from 'lucide-react-native';
 import { useEvents } from '../context/EventsContext';
 import { useUser } from '../context/UserContext';
+import { useTheme } from '../context/ThemeContext';
+
 
 const MyEventsScreen = ({ navigation }) => {
     const [activeTab, setActiveTab] = useState('Registered');

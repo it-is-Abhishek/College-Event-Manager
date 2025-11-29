@@ -5,18 +5,22 @@ import { StatusBar } from 'expo-status-bar';
 import AppNavigator from './src/navigation/AppNavigator';
 import { EventsProvider } from './src/context/EventsContext';
 import { UserProvider } from './src/context/UserContext';
+import { useTheme } from '../context/ThemeContext';
+import { ThemeProvider } from './src/context/ThemeContext';
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <EventsProvider>
-        <UserProvider>
-          <NavigationContainer>
-            <AppNavigator />
-            <StatusBar style="auto" />
-          </NavigationContainer>
-        </UserProvider>
-      </EventsProvider>
+      <ThemeProvider>
+        <EventsProvider>
+          <UserProvider>
+            <NavigationContainer>
+              <AppNavigator />
+              <StatusBar style="auto" />
+            </NavigationContainer>
+          </UserProvider>
+        </EventsProvider>
+      </ThemeProvider>
     </SafeAreaProvider>
   );
 }

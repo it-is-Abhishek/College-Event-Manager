@@ -8,21 +8,40 @@ import {
   Image,
   ActivityIndicator,
 } from 'react-native';
-import { Calendar, MapPin, Clock } from 'lucide-react-native';
+import { Calendar, MapPin, Clock, Heart } from 'lucide-react-native';
 import { useEvents } from '../context/EventsContext';
 import { useTheme } from '../context/ThemeContext';
+import { useUser } from '../context/UserContext';
 
 const EventListScreen = ({ navigation }) => {
-  const { events, loading, fetchEvents } = useEvents();
-  const { colors } = useTheme(); // assuming your ThemeContext exposes colors
+  const { events, loading, fetchEvents, toggleFavorite, isFavorite } = useEvents();
+  const { colors } = useTheme(); 
+  const { currentUser } = useUser();
   const [refreshing, setRefreshing] = useState(false);
 
   const handleRefresh = async () => {
     setRefreshing(true);
     try {
-      await fetchEvents(); // from context
+      await fetchEvents();
     } finally {
       setRefreshing(false);
+    }
+  };
+
+  const getEmoji = (type) => {
+    switch (type?.toLowerCase()) {
+      case 'academic': return '🎓';
+      case 'sports': return '⚽';
+      case 'cultural': return '🎭';
+      case 'workshop': return '🛠️';
+      case 'seminar': return '📚';
+      default: return '🎉';
+    }
+  };
+
+  const handleFavoritePress = async (eventId) => {
+    if (currentUser) {
+      await toggleFavorite(eventId, currentUser.id);
     }
   };
 
@@ -56,7 +75,7 @@ const EventListScreen = ({ navigation }) => {
         <View style={styles.typeBadge}>
           <Text style={styles.typeText}>{item.type || 'Event'}</Text>
         </View>
-        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.title}>{getEmoji(item.type)} {item.title}</Text>
 
         <View className="infoRow">
           <View style={styles.infoRow}>
